@@ -1,0 +1,53 @@
+{
+  "name": "rapid7-mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol server for the Rapid7 InsightIDR SIEM platform",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "rapid7-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "rapid7",
+    "insightidr",
+    "mcp",
+    "siem",
+    "security",
+    "model-context-protocol",
+    "log-search",
+    "leql",
+    "incident-response"
+  ],
+  "author": "Solomon Neas <me@solomonneas.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solomonneas/rapid7-mcp.git"
+  },
+  "homepage": "https://github.com/solomonneas/rapid7-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/solomonneas/rapid7-mcp/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  }
+}
