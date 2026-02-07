@@ -59,8 +59,9 @@ export function getConfig(): Rapid7Config {
     }
   }
 
+  const timeoutSec = parseInt(process.env.RAPID7_TIMEOUT ?? "30", 10);
   const timeout =
-    parseInt(process.env.RAPID7_TIMEOUT ?? "30", 10) * 1000;
+    (Number.isFinite(timeoutSec) && timeoutSec > 0 ? timeoutSec : 30) * 1000;
 
   return {
     baseUrl: baseUrl.replace(/\/+$/, ""),

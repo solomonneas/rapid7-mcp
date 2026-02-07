@@ -114,13 +114,29 @@ export function registerPrompts(server: McpServer): void {
                       "   **Email logs:**",
                       `   \`where(sender_domain = "${indicator_value}")\``,
                     ].join("\n")
-                  : [
-                      "   **Endpoint logs:**",
-                      `   \`where(file_hash = "${indicator_value}")\``,
-                      "",
-                      "   **Process logs:**",
-                      `   \`where(file_hash = "${indicator_value}" OR process_hash = "${indicator_value}")\``,
-                    ].join("\n"),
+                  : indicator_type === "URL"
+                    ? [
+                        "   **Web proxy logs:**",
+                        `   \`where(url CONTAINS "${indicator_value}")\``,
+                        "",
+                        "   **HTTP logs:**",
+                        `   \`where(url CONTAINS "${indicator_value}")\``,
+                      ].join("\n")
+                    : indicator_type === "EMAIL"
+                      ? [
+                          "   **Email logs:**",
+                          `   \`where(sender = "${indicator_value}" OR recipient = "${indicator_value}")\``,
+                          "",
+                          "   **Authentication logs:**",
+                          `   \`where(user = "${indicator_value}")\``,
+                        ].join("\n")
+                      : [
+                          "   **Endpoint logs:**",
+                          `   \`where(file_hash = "${indicator_value}")\``,
+                          "",
+                          "   **Process logs:**",
+                          `   \`where(file_hash = "${indicator_value}" OR process_hash = "${indicator_value}")\``,
+                        ].join("\n"),
               "",
               "## Step 3: Impact Assessment",
               "5. For any hits, use **get_asset** on affected systems",

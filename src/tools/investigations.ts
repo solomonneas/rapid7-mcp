@@ -127,9 +127,10 @@ export function registerInvestigationTools(
       try {
         const [invResponse, timelineResponse] = await Promise.all([
           client.getInvestigation(investigation_id),
-          client.getInvestigationTimeline(investigation_id).catch(() => ({
-            data: [],
-          })),
+          client.getInvestigationTimeline(investigation_id).catch((err) => {
+            console.error(`Failed to fetch investigation timeline for ${investigation_id}:`, err instanceof Error ? err.message : String(err));
+            return { data: [] };
+          }),
         ]);
 
         const inv = invResponse.data;

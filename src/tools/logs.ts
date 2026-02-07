@@ -93,7 +93,7 @@ export function registerLogTools(
                 stats: response.statistics.stats,
               }
             : undefined,
-          time_range: response.leql?.during?.time_range || `${from} - ${to}`,
+          time_range: response.leql?.during?.time_range || (from !== undefined && to !== undefined ? `${new Date(from).toISOString()} - ${new Date(to).toISOString()}` : time_range || "Last 24 Hours"),
         };
 
         return {
