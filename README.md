@@ -1,8 +1,10 @@
 # Rapid7 InsightIDR MCP Server
 
-[![TypeScript 5.7](https://img.shields.io/badge/TypeScript-5.7-blue)](https://www.typescriptlang.org/)
-[![MCP SDK](https://img.shields.io/badge/MCP-1.x-green)](https://modelcontextprotocol.io)
+[![TypeScript 5.7](https://img.shields.io/badge/TypeScript-5.7-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-20%2B-green?logo=node.js)](https://nodejs.org/)
+[![MCP SDK](https://img.shields.io/badge/MCP-1.x-purple)](https://modelcontextprotocol.io)
 [![Rapid7](https://img.shields.io/badge/Rapid7-InsightIDR-orange)](https://www.rapid7.com/products/insightidr/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that provides AI assistants with access to [Rapid7 InsightIDR](https://www.rapid7.com/products/insightidr/), a cloud-native SIEM for modern detection and response. Query investigations, search logs with LEQL, analyze alerts, track assets, monitor user behavior, and manage threat intelligence.
 
