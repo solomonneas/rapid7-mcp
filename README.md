@@ -129,6 +129,28 @@ RAPID7_ORG_ID=your-org-id
 }
 ```
 
+### OpenClaw
+
+Add to your `openclaw.json`:
+
+```json
+{
+  "mcp": {
+    "servers": {
+      "rapid7": {
+        "type": "stdio",
+        "command": "node",
+        "args": ["/path/to/rapid7-mcp/dist/index.js"],
+        "env": {
+          "RAPID7_API_KEY": "your-api-key",
+          "RAPID7_REGION": "us"
+        }
+      }
+    }
+  }
+}
+```
+
 ## Tool Reference
 
 | Tool | Description |
