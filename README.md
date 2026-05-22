@@ -1,3 +1,4 @@
+<!-- content-guard: allow private-ipv4 file -->
 # Rapid7 InsightIDR MCP Server
 
 [![TypeScript 5.7](https://img.shields.io/badge/TypeScript-5.7-blue?logo=typescript)](https://www.typescriptlang.org/)

@@ -1,3 +1,4 @@
+// content-guard: allow private-ipv4 file
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import type { Rapid7Client } from "../client.js";

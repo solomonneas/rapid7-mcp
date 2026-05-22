@@ -1,4 +1,5 @@
 {
+  "_comment": "content-guard: allow email file",
   "name": "rapid7-mcp",
   "version": "1.0.0",
   "description": "Model Context Protocol server for the Rapid7 InsightIDR SIEM platform",
